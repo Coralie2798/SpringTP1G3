@@ -6,4 +6,6 @@ import com.inti.model.Soliste;
 
 public interface ISolisteRepository extends JpaRepository<Soliste, Integer> {
 
+	
+	
 }
