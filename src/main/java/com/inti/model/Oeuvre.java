@@ -34,7 +34,7 @@ public class Oeuvre {
 	@JoinTable(name="Soliste_Oeuvre", joinColumns = @JoinColumn(name="nOeuvre"), inverseJoinColumns = @JoinColumn(name="nSoliste"))
 	List<Soliste>listeSolistes;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "oeuvreC")
 	private List<Concert> concert;
 	
 	
