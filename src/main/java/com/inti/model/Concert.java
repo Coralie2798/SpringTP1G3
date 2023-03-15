@@ -28,6 +28,10 @@ public class Concert {
 	@ManyToOne
 	@JoinColumn(name="idOeuvreC")
 	private Oeuvre oeuvreC;
+	
+	@ManyToOne
+	@JoinColumn(name = "codeLieu")
+	private Lieu lieuC;
 
 
 	public Concert(String nom, LocalDate dateConcert) {
