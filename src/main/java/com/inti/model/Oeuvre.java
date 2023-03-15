@@ -6,12 +6,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,7 +33,7 @@ public class Oeuvre {
 	@JoinTable(name="Soliste_Oeuvre", joinColumns = @JoinColumn(name="nOeuvre"), inverseJoinColumns = @JoinColumn(name="nSoliste"))
 	List<Soliste>listeSolistes;
 	
-	@OneToMany
+	@OneToMany(mappedBy = "oeuvreC")
 	private List<Concert> concert;
 	
 	
@@ -43,5 +42,8 @@ public class Oeuvre {
 		this.nom = nom;
 		this.duree = duree;
 	}
+	
+	@OneToMany(mappedBy = "oeuvre")
+	List<ChefOrchestre> listeChefOrchestre;
 	
 }
