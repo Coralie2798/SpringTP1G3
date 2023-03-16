@@ -25,13 +25,15 @@ public class Concert {
 	private String nom;
 	private LocalDate dateConcert;
 
-	@ManyToOne
-	@JoinColumn(name="idOeuvreC")
-	private Oeuvre oeuvreC;
 	
 	@ManyToOne
 	@JoinColumn(name = "codeLieu")
 	private Lieu lieuC;
+	
+	@ManyToOne
+	@JoinColumn(name="idOeuvreC")
+	private Oeuvre oeuvreC;
+	
 
 
 	public Concert(String nom, LocalDate dateConcert) {
