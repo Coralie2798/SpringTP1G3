@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>enregistrer un soliste</title>
+<title>Modifier des informations</title>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -13,26 +13,30 @@
 <body>
 
 	<div class="card">
-		<h5 class="card-header">Enregistrer un soliste</h5>
+		<h5 class="card-header">Modifier un soliste</h5>
 		<div class="card-body">
-			<h5  class="card-title">Formulaire d'enregistrement</h5>
-			<form method="post" action="saveSoliste" modelAttribute="soliste">
+			<h5  class="card-title">Formulaire de modification</h5>
+			<form method="post" action="/modifSoliste" modelAttribute="soliste">
 				<div class="mb-3">
-					<label for="nom" class="form-label">Nom</label> 
-					<input type="text" class="form-control" id="nom" name="nom">
+					<label hidden="true" for="nSoliste" class="form-label">nSoliste</label> 
+					<input type="hidden" class="form-control" id="nSoliste" name="nSoliste" th:value="${soliste.nSoliste}">
 				</div>
 				<div class="mb-3">
-					<label for="prenom" class="form-label">Prénom</label> 
-					<input type="text" class="form-control" id="prenom" name="prenom">
+					<label for="nom" class="form-label">Nom</label> 
+					<input type="text" class="form-control" id="nom" name="nom" th:value="${soliste.nom}">
+				</div>
+				<div class="mb-3">
+					<label for="prenom" class="form-label">prenom</label> 
+					<input type="text" class="form-control" id="prenom" name="prenom" th:value="${soliste.prenom}">
 				</div>
 				<div class="mb-3">
 					<label for="dateNaissance" class="form-label">Date de naissance</label>
 					<input type="date" class="form-control" id="dateNaissance"
-						name="dateNaissance" >
+						name="dateNaissance" th:value="${soliste.dateNaissance}">
 				</div>
 				<div class="mb-3">
 					<label for="nationnalite" class="form-label">Nationnalité</label> 
-					<input type="text" class="form-control" id="nationnalite" name="nationnalite">
+					<input type="text" class="form-control" id="nationnalite" name="nationnalite" th:value="${soliste.nationnalite}">
 				</div>
 				<div class="btn-group" role="group" aria-label="Basic outlined example">
 					<button type="submit" class="btn btn-outline-success">Enregistrer</button>
