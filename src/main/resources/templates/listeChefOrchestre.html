@@ -23,7 +23,7 @@
 	  </div>
 	  
 
-		  <div class="row" th:each="ChefO : ${ listeCO }" th:with="idCO = ${ ChefO.id }">
+		  <div class="row" th:each="ChefO : ${ listeChefOrchestre }" th:with="idCO = ${ ChefO.id }">
 		  <div class="col" th:text="${ idCO }">
 		  		
 		  	</div>
@@ -33,9 +33,11 @@
 		    <div class="col" th:text="${ ChefO.nationalite }"></div>
 		    <div class="col" th:text="${ ChefO.cachet }"></div>
 		    <div class="col" th:text="${ ChefO.commentaires }"></div>
-<!-- 		    <div class="col"> -->
-<!-- 		    	<a th:href="'deleteVoiture/' + ${ idV }"> <button type="button" class="btn btn-outline-danger">Supprimer</button></a> -->
-<!-- 		    </div> -->
+
+		    <div class="col">
+		    	<a th:href="'deleteChefOrchestre/' + ${ idCO }"> <button type="button" class="btn btn-outline-danger">Supprimer</button></a>
+		    	<a th:href="'modifChefOrchestre/' + ${ idCO }"> <button type="button" class="btn btn-outline-danger">Modifier</button></a>
+		    </div>
 		  
 		  </div>
 	  
