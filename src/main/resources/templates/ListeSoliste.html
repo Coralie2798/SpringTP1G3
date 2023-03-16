@@ -20,6 +20,9 @@
 			<div class="col">Nationnalité</div>
 			<div class="col">Action</div>
 		</div>
+		
+		
+		 
 		<div class="row" th:each="sol :${ listeS}" th:with="id=${sol.nSoliste}">
 			<div class="col" th:text="${id}"></div>
 			<div class="col" th:text="${sol.Nom}"></div>
@@ -37,6 +40,8 @@
 	</div>
 	<div class="d-grid gap-2 col-6 mx-auto">
 	<a th:href="formSoliste" ><button type="button" class="btn btn-outline-primary">Enregistrer un nouveau soliste</button></a>
+	<a th:href="Oeuvre_Soliste" ><button type="button" class="btn btn-outline-primary">attribuer des oeuvres à un soliste</button></a>
+	
 	</div>
 </body>
 </html>
