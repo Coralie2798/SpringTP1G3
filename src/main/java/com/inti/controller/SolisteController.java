@@ -50,7 +50,7 @@ public class SolisteController {
 	public String modifSoliste(@PathVariable("nSoliste") int id, Model m) 
 	{
 		m.addAttribute("soliste", isr.getReferenceById(id));
-		
+		System.out.println(m);
 		return "modifSoliste";
 	}
 	
