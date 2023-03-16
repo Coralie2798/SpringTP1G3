@@ -10,6 +10,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
+<form method="post" action="/Oeuvre_Soliste">
 	<div class="accordion" id="accordionExample">
 		<div class="accordion-item" th:each="sol :${ listeS}" >
 			<h2 class="accordion-header" id="headingThree">
@@ -23,6 +24,7 @@
 				aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 				<div class="accordion-body" th:each="oeuvre :${listeO}">
 					<strong >Oeuvres</strong>
+					
 					<input type="checkbox" th:text="${oeuvre.nom}">
 						
 							
@@ -32,6 +34,10 @@
 		</div>
 	</div>
 	
-
+	<div class="btn-group" role="group" aria-label="Basic outlined example">
+					<button type="submit" class="btn btn-outline-success">Enregistrer</button>
+					<button type="reset" class="btn btn-outline-danger">Annuler</button>
+				</div>
+</form>
 </body>
 </html>
